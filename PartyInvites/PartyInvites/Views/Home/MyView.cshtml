@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MyView</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="text-center"> 
+        <h3>We are going to have an exciting party!(Parti verecegiz)</h3>
+        <h4>And you are invited(sen davetlisin)</h4>
+        <hr />
+        @ViewBag.hour world 
+        <br />
+        <br />
+        <a class="btn btn-primary" asp-action="RsvpForm">Rsvp Form Now</a>  
+    </div>
+</body>
+</html>

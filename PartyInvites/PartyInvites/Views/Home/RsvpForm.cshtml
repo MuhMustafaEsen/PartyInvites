@@ -1,0 +1,51 @@
+﻿@model PartyInvites.Models.GuestResponse
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+    <link href="~/css/style.css" rel="stylesheet" /> @*validationlar için style çekiyoz*@
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>RSVP</h4></div>
+        <div class="panel-body">
+            <form class="p-a-1" asp-action="RsvpForm" method="post">
+                <div asp-validation-summary="All"></div> @*burası validationlarin gosterilmesi için*@
+                <div class="form-group">
+                    <label asp-for="Name">Your Name :</label>
+                    <input class="form-control" asp-for="Name" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Your Email :</label>
+                    <input class="form-control" asp-for="Email" />
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone">Your Phone :</label>
+                    <input class="form-control" asp-for="Phone" />
+                </div>
+                <div class="form-group">
+                    <label>Will you attend?((Katilacak misin?))</label>
+                    <select class="form-control" asp-for="WillAttend">
+                        <option value="">Choose an option(Seçim yapınız)</option>
+                        <option value="true">Yes I'll be There(Evet)</option>
+                        <option value="false">No I Can't come(Hayır)</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">
+                        Submit RSVP
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
